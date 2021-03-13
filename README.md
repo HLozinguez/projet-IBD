@@ -15,3 +15,5 @@ Fonctionnalité 5 : selectform.php ET select.php
 Fonctionnalité 7 : albumsorigin.php
 
 Fonctionnalité 8 : nbtotal.php
+
+Fonctionnalité bonus 2 : pageconnexion.php ET verif.php
