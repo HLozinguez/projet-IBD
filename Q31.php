@@ -6,6 +6,7 @@
 </head>
 <body>
 <form action='Q32.php' method='post'>
+    <p>
     <label for='id'> ID </label>
     <input type='checkbox' id='id' name='id' >
 
@@ -26,6 +27,23 @@
 
     <label for='com'>Commentaire </label>
     <input type='checkbox' id='com' name='com' >
+
+    </p>
+    <p>
+
+    <label for='artalpha'>Artiste par ordre alphabétique </label>
+    <input type='radio' id='artalpha' name='tri' value='artalpha' >
+
+    <label for='ordersortie'> Albums rangés par année de sortie </label>
+    <input type='radio' id='ordersortie' name='tri' value='ordersortie' >
+
+    <label for='orderedit'>Albums rangés par année d'édition </label>
+    <input type='radio' id='orderedit' name='tri' value='orderedit' >
+
+    <label for='ordersortieart'> Albums rangés par année de sortie pour le même artiste</label>
+    <input type='radio' id='ordersortieart' name='tri' value='ordersortieart' >
+
+    </p>
 
     <input type="submit" value=" Ok ">
 

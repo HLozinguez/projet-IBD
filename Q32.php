@@ -48,34 +48,60 @@ echo "</h1>";
 
 $reponse = $bdd->query("SELECT * FROM vinyles ");
 
+// si l'une des cases a été cochée, alors la variable réponse est modifiée
+if(isset($_POST['tri'])){
+    $tri = $_POST['tri'];
+    if($tri == 'artalpha'){
+        $reponse = $bdd->query("SELECT * FROM vinyles ORDER BY artiste");
+    }
+    if($tri == 'ordersortie'){
+        $reponse = $bdd->query("SELECT * FROM vinyles ORDER BY annee_sortie");
+    }
+    if($tri =='orderedit'){
+        $reponse = $bdd->query("SELECT * FROM vinyles ORDER BY annee_edition");
+    }
+    if($tri =='ordersortieart') {
+        $reponse = $bdd->query("SELECT * FROM vinyles ORDER BY artiste, annee_sortie");
+    }
+}
+
 // on met les valeurs demandées
-while ($donnees = $reponse->fetch())
-{ if(isset($id)){
+// pour cela on se demande d'abord si elles existent puis on les affiche
+while ($donnees = $reponse->fetch()){
     ?>
     <p>
-    <?php echo $donnees['id']; ?><br />
+    <?php
+  if(isset($id)){
+    ?>
+    ID : <?php echo $donnees['id']; ?><br />
     <?php
 } if(isset($titre)){
-    echo $donnees['titre']; ?><br />
+    ?>
+    Titre : <?php echo $donnees['titre']; ?><br />
     <?php
 } if(isset($art)){
-    echo $donnees['artiste']; ?><br />
+    ?>
+    Artiste : <?php echo $donnees['artiste']; ?><br />
     <?php
 }if(isset($sortie)){
     ?>
-    <?php echo $donnees['annee_sortie']; ?><br />
+    Année de sortie : <?php echo $donnees['annee_sortie']; ?><br />
     <?php
 } if(isset($edit)){
-    echo $donnees['annee_edition']; ?><br />
+    ?>
+    Année d'édition : <?php echo $donnees['annee_edition']; ?><br />
     <?php
 } if(isset($nb)){
-    echo $donnees['nb_disques']; ?><br />
+    ?>
+    Nombre de disques : <?php echo $donnees['nb_disques']; ?><br />
     <?php
 }if(isset($com)){
-    echo $donnees['commentaire']; ?><br />
-    </p>
+    ?>
+    Commentaire : <?php echo $donnees['commentaire']; ?><br />
     <?php
 }
+    ?>
+    </p> <?php
 }
 
 
