@@ -12,7 +12,7 @@ Fonctionnalité 4 : insererform.php ET inserer.php
 
 Fonctionnalité 5 : selectform.php ET select.php
 
-Fonctionnalité 5 :
+Fonctionnalité 6 : Q31 et Q32
 
 Fonctionnalité 7 : albumsorigin.php
 
