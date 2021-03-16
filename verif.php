@@ -31,8 +31,7 @@
 				echo 'identifiant et/ou mot de passe incorrectes';
 			}
 			else {
-				header('Location : menu.html');
-				exit();
+				include 'menu.html';
 			} 
 		
 			
@@ -49,3 +48,4 @@
 
     </body>
 </html>
+
