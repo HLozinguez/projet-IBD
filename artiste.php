@@ -4,16 +4,17 @@
 <head>
 
     <meta charset="utf-8" />
+	<link rel="stylesheet" href="style3.css" />
 </head>
 <!-- ATTENTION : POUR ME CONNECTER A LA BASE DE DONNEE J'AI DU CHANGER LE PORT DANS $bdd. JE NE SAIS PAS SI VOUS UTILISEZ LE MÊME PORT, SI NON, LE MODIFIER. -->
 <!-- Désolé des problèmes que ça créé, mais c'était la seule solution que j'ai trouvé pour faire marcher mon MAMP. -->
 
 <body>
-<h1> Artistes apparent dans votre collection.</h1> 
+<h3> Les différents artistes présents dans votre collection : </h3> 
 <?php
 try
 {
-    $bdd = new PDO('mysql:host=localhost;port=3307;dbname=disques;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=disques;charset=utf8','root','root');
 }
 catch(Exception $e)
 {
@@ -25,11 +26,11 @@ $reponse = $bdd->query('SELECT distinct(artiste) FROM vinyles');
 while ($donnees = $reponse->fetch())
 {
 ?>
-    <p>
+    <ul id=artiste>
 
-       <?php echo $donnees['artiste']; ?><br />
+       <li><?php echo $donnees['artiste']; ?></li>
 
-    </p>
+    </ul>
 <?php
 }
 
