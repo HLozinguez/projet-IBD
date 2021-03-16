@@ -1,0 +1,38 @@
+
+html{
+ background-color: 	Gainsboro; 
+}
+
+
+body {
+ font-family:georgia, serif;
+ }
+
+h1{
+color : DarkCyan;
+font-size:170%;
+}
+
+h3{
+color : DarkCyan;
+font-size:130%;
+	
+}
+
+
+a {
+text-decoration: none;
+padding: 10px 30px;
+background-color: MediumAquamarine; 
+color: white;
+border: 1px solid gray;
+border-style:inset;
+border-radius: 12px;
+border: 2px solid #46a28d;
+text-align: center;
+}
+a:hover {
+background-color: PaleGoldenrod;
+color:black;
+}
+

@@ -1,0 +1,18 @@
+html{
+ background-color: 	Gainsboro; 
+}
+
+body {
+ font-family:georgia, serif;
+ }
+
+
+#vinyle{
+	color : DarkCyan;
+	text-decoration : underline;
+}
+
+.autres{
+	color : DarkCyan;
+	font-size:90%;
+}
