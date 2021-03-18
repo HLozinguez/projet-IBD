@@ -9,7 +9,33 @@
 
 <body>
     <h1> Bienvenue sur votre collection de vinyles !</h1>
-	
+	   <?php
+try
+{
+    $bdd = new PDO('mysql:host=localhost;dbname=disques;charset=utf8', 'root', 'root');
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT count(DISTINCT titre) as total FROM vinyles');
+
+while ($donnees = $reponse->fetch())
+{
+?>
+    <p>
+
+       <?php echo "Vous avez " ;
+       echo $donnees['total'];
+       echo " albums dans votre collection"; ?><br />
+
+    </p>
+<?php
+}
+
+$reponse->closeCursor();
+?>
 	</br>
 	
 	<h3> Informations sur vos vinyles </h3>
